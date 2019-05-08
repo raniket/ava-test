@@ -1,0 +1,32 @@
+{
+  "name": "ava-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose",
+    "test:watch": "node_modules/.bin/ava --verbose --watch",
+    "cover": "nyc npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "babel-register": "^6.26.0",
+    "nyc": "^14.1.0",
+    "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "check-coverage": true,
+    "report-dir": "./coverage"
+  }
+}
