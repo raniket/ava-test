@@ -1,0 +1,27 @@
+link to learn node app dockerization: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+# bild our image
+$ docker build --tag:image_name .
+
+# list the images
+$ docker images or $ docker image ls
+
+# run the image
+$ docker run -p 49160:9000 -d nodeapp
+# Running your image with -d runs the container in detached mode, leaving the container running in the background.
+# The -p flag redirects a public port to a private port inside the container. Run the image you previously built:
+# where 49160 is your publich port(which can be oppend in your browser) and 9000 is private port inside the container
+
+# PRINT THE OUTPUT OF YOUR app
+# Get container ID
+$ docker ps
+
+# Print app output
+$ docker logs <container id>
+
+# Example
+Runngin on http://localhost:9000
+
+# if you need to go inside the container you can use the exec command
+# Enter into the container
+$ docker exec -it <container id> /bin/bash
