@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "ava --verbose",
     "test:watch": "node_modules/.bin/ava --verbose --watch",
     "cover": "nyc npm run test"
