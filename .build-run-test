@@ -25,3 +25,30 @@ Runngin on http://localhost:9000
 # if you need to go inside the container you can use the exec command
 # Enter into the container
 $ docker exec -it <container id> /bin/bash
+
+# STOP THE RUNING CONTAINER
+$ docker container ls (list the running containers)
+$ docker container stop <container id>
+
+# SHARE YOUR IMAGE 
+# login with your docker id
+$ docker login
+
+# TAG THE IMAGE 
+$ docker tag image username/repository:tag 
+# FOR EXAMPLE 
+$ docker tag nodeapp raniket/docker-first:part1
+
+# run the docker image ls to see our newly tagged image.
+$ docker image ls 
+
+# PUBLISH THE IMAGE 
+# upload your tagged image to the repository 
+$ docker push username/repository:tag 
+
+# PULL AND RUN THE IMAGE FROM THE REMOTE REPOSITORY 
+$ docker run -p 4000:9000 username/repository:tag 
+# if the image isn't available locally on the machine , Docker pulls it from the repository.
+
+# No matter where docker run executes, it pulls your image, along with Python and all the dependencies from requirements.txt, and runs your code.
+# It all travels together in a neat little package, and you don’t need to install anything on the host machine for Docker to run it.
